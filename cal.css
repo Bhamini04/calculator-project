@@ -1,0 +1,229 @@
+/* calculator project/cal.css */
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* editing h1 calculator */
+.calculator h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding: 5px 20px;
+  background: linear-gradient(90deg, #f95464, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Add a glowing underline effect */
+.calculator h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f75a86, #00f2fe);
+  border-radius: 2px;
+  animation: underline-glow 3s infinite alternate;
+}
+
+@keyframes underline-glow {
+  from { box-shadow: 0 0 5px #f85e87; }
+  to   { box-shadow: 0 0 20px #00f2fe; }
+}
+
+.calculator {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+
+#history {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#history h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;  /* adds scroll if too long */
+}
+
+#history-list li {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #eee;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for history items */
+#history-list li:hover {
+  transform: translateX(5px);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+#myTextbox {
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: right;
+    width: 100%;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top:10px;
+}
+
+.button,
+.operator,
+.backspace,
+.clear,
+.equal {
+    background-color: #c77a7a;
+    border: none;
+    border-radius: 8px;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    height:50px;
+    font-size:18px;
+    box-sizing:border-box;
+
+}
+
+.button:hover,
+.operator:hover,
+.backspace:hover,
+.clear:hover,
+.equal:hover
+{
+    background-color: #eb2323;
+    opacity: 0.8;
+}
+
+
+#myTextbox {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-sizing: border-box;
+
+}
+  
+
+
+
+
+
+
+/* Animated button press */
+.buttons button:active {
+  transform: scale(0.9);
+  background: #d0d0d0;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #1e1e1e;
+  color: #f4f4f4;
+}
+
+body.dark .calculator {
+  background: #2a2a2a;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+}
+
+body.dark #myTextbox {
+  background: #333;
+  color: #f4f4f4;
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.05);
+}
+
+body.dark .buttons button {
+  background: #444;
+  color: #f4f4f4;
+}
+
+body.dark .buttons button:active {
+  background: #666;
+}
+
+/* Toggle Button Style */
+#theme-toggle {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: white;
+  transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .calculator {
+    max-width: 100%;
+  }
